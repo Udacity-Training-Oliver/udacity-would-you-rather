@@ -11,7 +11,7 @@ Remove-Item .\package-lock.json
 Remove-Item -Recurse -Force node_modules
 yarn
 
-yarn add react-router-dom redux redux-thunk react-icons react-redux-loading
+yarn add react-router-dom react-redux redux redux-thunk react-icons react-redux-loading
 ```
 
 
