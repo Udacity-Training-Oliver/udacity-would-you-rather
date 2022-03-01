@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, Fragment } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import LoadingBar from 'react-redux-loading';
+import { handleInitialData } from '../actions/shared';
 
-function App() {
+export default function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(handleInitialData());
+  });
+
+  const loading = useSelector((state) => state.authedUser === null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Fragment>
+        <LoadingBar />
+        <div className='container'>
+          {loading === true
+            ? null
+            :
+            <div>
+              Hello "Would you rather"
+            </div>}
+        </div>
+      </Fragment>
+    </Router>
   );
 }
-
-export default App;
