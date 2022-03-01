@@ -10,7 +10,10 @@ npx create-react-app udacity-would-you-rather
 Remove-Item .\package-lock.json
 Remove-Item -Recurse -Force node_modules
 yarn
+
+yarn add react-router-dom redux redux-thunk react-icons react-redux-loading
 ```
+
 
 # Would You Rather Project (Starter Code)
 
