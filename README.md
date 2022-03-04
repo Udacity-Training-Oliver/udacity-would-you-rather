@@ -12,8 +12,14 @@ Remove-Item -Recurse -Force node_modules
 yarn
 
 yarn add react-router-dom react-redux redux redux-thunk react-icons react-redux-loading
+yarn add react-bootstrap bootstrap@5.1.3
 ```
 
+## Links 
+
+- [react-boostrap and react-router causing full page reload](https://stackoverflow.com/questions/59530374/react-boostrap-and-react-router-causing-full-page-reload)
+- [Converting Object to an Array](https://www.samanthaming.com/tidbits/76-converting-object-to-array/)
+- [Two arrays inner join in JavaScript](https://stackoverflow.com/questions/66985164/two-arrays-inner-join-in-javascript)
 
 # Would You Rather Project (Starter Code)
 

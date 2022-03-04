@@ -1,4 +1,4 @@
-# Project Instrctions
+# Project Instructions
 
 ## App Functionality
 
