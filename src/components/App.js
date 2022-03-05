@@ -14,9 +14,9 @@ import AddQuestionPage from './Questions/AddQuestionPage';
 import LeaderBoardPage from './LeaderBoard/LeaderBoardPage';
 import LoginPage from './Login/LoginPage';
 import Menu from './Menu/Menu';
-
+import AuthRequired from './Login/AuthRequired';
 //TODO Move to Login
-import { setAuthedUser } from '../actions/authedUser';
+// import { setAuthedUser } from '../actions/authedUser';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -24,7 +24,7 @@ export default function App() {
   useEffect(() => {
     dispatch(handleInitialData());
     //TODO Move to Login
-    dispatch(setAuthedUser('tylermcginnis'));    
+    // dispatch(setAuthedUser('tylermcginnis'));    
   }, [dispatch]);
 
   const loading = useSelector((state) => state.loadingBar?.default !== 0);
@@ -33,7 +33,7 @@ export default function App() {
     <Router>
       <Fragment>
         <div>
-        <LoadingBar />
+          <LoadingBar />
           {loading === true
             ? null
             :
@@ -42,10 +42,24 @@ export default function App() {
                 <Menu />
               </header>
               <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/add" element={<AddQuestionPage />} />
-                <Route path="/leaderboard" element={<LeaderBoardPage />} />
-                <Route path="/login" element={<LoginPage />} />
+                <Route path="/login" element={
+                  <LoginPage />} />
+
+                <Route path="/" element={
+                  <AuthRequired>
+                    <HomePage />
+                  </AuthRequired>} />
+
+                <Route path="/add" element={
+                  <AuthRequired>
+                    <AddQuestionPage />
+                  </AuthRequired>} />
+
+                <Route path="/leaderboard" element={
+                  <AuthRequired>
+                    <LeaderBoardPage />
+                  </AuthRequired>} />
+
               </Routes>
             </div>
           }
