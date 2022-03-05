@@ -9,9 +9,6 @@ export default function Home() {
   const questions = useSelector((state) => Object.values(state.questions));
 
   const answeredQuestionsIds = user.answers ? Object.keys(user.answers) : [];
-
-  console.log('Questions', questions);
-
   const answeredQuestions = questions.filter((q) => answeredQuestionsIds.includes(q.id));
   const unansweredQuestions = questions.filter((q) => !answeredQuestionsIds.includes(q.id));
 

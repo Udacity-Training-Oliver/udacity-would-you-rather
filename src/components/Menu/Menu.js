@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 export default function Menu() {
   const user = useSelector((state) => state.users[state.authedUser]);
-  console.log(user);
+
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
