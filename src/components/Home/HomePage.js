@@ -17,13 +17,11 @@ export default function Home() {
 
   return (
     <main>
-      <Tabs defaultActiveKey="unanswered" id="questions" className="mb-3">
+      <Tabs defaultActiveKey="unanswered" id="questions" className="m-3">
         <Tab eventKey="unanswered" title="Unanswered Questions">
-          <p>Unanswered Questions</p>
           <QuestionList questions={unansweredQuestions} />
         </Tab>
         <Tab eventKey="answered" title="Answered Questions">
-          <p>Answered Questions</p>
           <QuestionList questions={answeredQuestions} />
         </Tab>
       </Tabs>
