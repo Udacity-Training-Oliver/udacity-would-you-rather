@@ -35,8 +35,8 @@ export default function Menu() {
                 <img width={32} src={user.avatarURL} alt="Avatar" />
               </div>
             }
-
-            <Nav.Link as={Link} to="/login" className="mx-2">
+            
+            <Nav.Link as={Link} to="/login" className="mx-2 ms-auto">
               {user ? 'Logout' : 'Login'}
             </Nav.Link>
           </Nav>
