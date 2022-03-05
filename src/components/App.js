@@ -1,7 +1,7 @@
 import React, { useEffect, Fragment } from 'react';
-import { 
-  BrowserRouter as Router, 
-  Route, 
+import {
+  BrowserRouter as Router,
+  Route,
   Routes,
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -15,20 +15,25 @@ import LeaderBoardPage from './LeaderBoard/LeaderBoardPage';
 import LoginPage from './Login/LoginPage';
 import Menu from './Menu/Menu';
 
+//TODO Move to Login
+import { setAuthedUser } from '../actions/authedUser';
+
 export default function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(handleInitialData());
+    //TODO Move to Login
+    dispatch(setAuthedUser('tylermcginnis'));    
   }, [dispatch]);
 
-  const loading = useSelector((state) => state.authedUser === null);
+  const loading = useSelector((state) => state.loadingBar?.default !== 0);
 
   return (
     <Router>
       <Fragment>
-        <LoadingBar />
         <div>
+        <LoadingBar />
           {loading === true
             ? null
             :
@@ -42,7 +47,8 @@ export default function App() {
                 <Route path="/leaderboard" element={<LeaderBoardPage />} />
                 <Route path="/login" element={<LoginPage />} />
               </Routes>
-            </div>}
+            </div>
+          }
         </div>
       </Fragment>
     </Router>

@@ -25,11 +25,12 @@ export default function Menu() {
               Leader Board
             </Nav.Link>
 
+            {user && 
             <Navbar.Text className="mx-2 ms-auto">
               Hello {user.name}
-            </Navbar.Text>
+            </Navbar.Text>}
 
-            {user.avatarURL !== null &&
+            {user && user.avatarURL !== null &&
               <div className="d-flex align-items-center">
                 <img width={32} src={user.avatarURL} alt="Avatar" />
               </div>

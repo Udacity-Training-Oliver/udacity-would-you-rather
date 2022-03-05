@@ -8,6 +8,10 @@ export default function Home() {
   const user = useSelector((state) => state.users[authedUser]);
   const questions = useSelector((state) => Object.values(state.questions));
 
+  if (authedUser === null || !user) {
+    return (<main>Unauthorized</main>);
+  }
+
   const answeredQuestionsIds = user.answers ? Object.keys(user.answers) : [];
   const answeredQuestions = questions.filter((q) => answeredQuestionsIds.includes(q.id));
   const unansweredQuestions = questions.filter((q) => !answeredQuestionsIds.includes(q.id));
