@@ -22,6 +22,11 @@ yarn add react-bootstrap bootstrap@5.1.3
 - [Two arrays inner join in JavaScript](https://stackoverflow.com/questions/66985164/two-arrays-inner-join-in-javascript)
 - [Right-align NavBar Item](https://stackoverflow.com/questions/42311292/react-bootstrap-navbar-how-to-right-align-a-navbar-item)
 - [Bootstrap 5 Flex Alignment](https://getbootstrap.com/docs/5.0/utilities/flex/#align-items)
+- [Local Images in React](https://stackoverflow.com/questions/44154939/load-local-images-in-react-js)
+- [Bootstrap Color Customization](https://getbootstrap.com/docs/5.0/customize/color/)
+- [How to change Tabs Layout and Tab style in react bootstrap](https://stackoverflow.com/questions/62921542/how-to-change-tabs-layout-and-tab-style-in-react-bootstrap)
+- [Bootstrap Button Border Style](https://stackoverflow.com/questions/70325840/bootstrap-5-button-border-color-via-css)
+
 
 # Would You Rather Project (Starter Code)
 

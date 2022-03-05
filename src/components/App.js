@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import LoadingBar from 'react-redux-loading';
+import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { handleInitialData } from '../actions/shared';
 import HomePage from './Home/HomePage';

@@ -2,7 +2,8 @@ import PropTypes from 'prop-types'
 import { Button, Card } from "react-bootstrap";
 
 export default function QuestionListItem(props) {
-  const {id, author, optionOne, optionTwo} = props;
+  // TODO const {id, author, optionOne, optionTwo} = props;
+  const {author, optionOne} = props;
 
   return (
     <Card style={{ width: '24rem' }}>

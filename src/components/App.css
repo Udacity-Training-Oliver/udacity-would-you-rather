@@ -1,0 +1,44 @@
+/* 
+ * Override background color of primary button 
+ */
+.btn-primary {
+  background-color: #3c4043 !important;
+}
+
+/* Button shadow, adapted from here:
+ *  https://stackoverflow.com/questions/70325840/bootstrap-5-button-border-color-via-css
+ */
+.btn-check:focus + .btn-primary, 
+.btn-primary:focus {
+  box-shadow: 0 0 0 .25rem #9b9d9e !important;
+}
+.btn-check:active + .btn-primary:focus, 
+.btn-check:checked + .btn-primary:focus, 
+.btn-primary.active:focus, 
+.btn-primary:active:focus, 
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 .25rem #9b9d9e !important; 
+}
+
+/*
+ * Tab Layout, adapted from here:
+ * https://stackoverflow.com/questions/62921542/how-to-change-tabs-layout-and-tab-style-in-react-bootstrap 
+ */
+.nav-tabs .nav-link {
+  color: #3c4043 !important;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: white !important; 
+  background-color: #3c4043 !important;
+  border-color: #3c4043 !important;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #3c4043 !important;
+}
+
+.nav-tabs .nav-link:hover{
+  color: #3c4043 !important;
+  background-color: #9b9d9e !important;
+}
