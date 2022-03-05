@@ -20,6 +20,8 @@ yarn add react-bootstrap bootstrap@5.1.3
 - [react-boostrap and react-router causing full page reload](https://stackoverflow.com/questions/59530374/react-boostrap-and-react-router-causing-full-page-reload)
 - [Converting Object to an Array](https://www.samanthaming.com/tidbits/76-converting-object-to-array/)
 - [Two arrays inner join in JavaScript](https://stackoverflow.com/questions/66985164/two-arrays-inner-join-in-javascript)
+- [Right-align NavBar Item](https://stackoverflow.com/questions/42311292/react-bootstrap-navbar-how-to-right-align-a-navbar-item)
+- [Bootstrap 5 Flex Alignment](https://getbootstrap.com/docs/5.0/utilities/flex/#align-items)
 
 # Would You Rather Project (Starter Code)
 
