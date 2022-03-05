@@ -1,7 +1,3 @@
-// TODO
-// Set avatar URL of users (haven't been provided in starter code).
-// Has been set to null so that the code is free of errors.
-
 let users = {
   sarahedo: {
     id: 'sarahedo',
