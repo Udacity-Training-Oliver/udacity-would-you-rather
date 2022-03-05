@@ -26,6 +26,9 @@ yarn add react-bootstrap bootstrap@5.1.3
 - [Bootstrap Color Customization](https://getbootstrap.com/docs/5.0/customize/color/)
 - [How to change Tabs Layout and Tab style in react bootstrap](https://stackoverflow.com/questions/62921542/how-to-change-tabs-layout-and-tab-style-in-react-bootstrap)
 - [Bootstrap Button Border Style](https://stackoverflow.com/questions/70325840/bootstrap-5-button-border-color-via-css)
+- [React Router V6 Authentication](https://reactrouter.com/docs/en/v6/examples/auth)
+- [How To Share State Across React Components with Context](https://www.digitalocean.com/community/tutorials/how-to-share-state-across-react-components-with-context)
+- [Are many useStates better than useState(object)?](https://thoughtspile.github.io/2021/10/11/usestate-object-vs-multiple/)
 
 
 # Would You Rather Project (Starter Code)
