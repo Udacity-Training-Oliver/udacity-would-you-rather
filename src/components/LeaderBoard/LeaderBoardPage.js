@@ -14,7 +14,6 @@ export default function LeaderBoardPage() {
         .filter((q) => q.author === u.id).length,
     }))
   );
-  console.log('Scores', scores);
 
   scores.sort((a, b) => (b.answeredQuestions + b.createdQuestions) - (a.answeredQuestions + a.createdQuestions));
 
