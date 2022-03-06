@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import ScoreList from "./ScoreList"
 
-export default function LeaderBoard() {
+export default function LeaderBoardPage() {
   const scores = useSelector((state) =>
     Object.values(state.users).map(u => ({
       id: u.id,
