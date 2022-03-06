@@ -46,7 +46,7 @@ export default function Login() {
   return (
     <main>
       <Form onSubmit={handleSubmit}>
-        <Form.Group className="m-3" controlId="formBasicEmail">
+        <Form.Group className="m-3" controlId="formLogin">
           <Form.Label>User</Form.Label>
           <Form.Select 
             onChange={handleChange}
