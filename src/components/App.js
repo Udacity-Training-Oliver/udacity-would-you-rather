@@ -10,6 +10,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { handleInitialData } from '../actions/shared';
 import HomePage from './Home/HomePage';
+import QuestionPage from './Questions/QuestionPage';
 import AddQuestionPage from './Questions/AddQuestionPage';
 import LeaderBoardPage from './LeaderBoard/LeaderBoardPage';
 import LoginPage from './Login/LoginPage';
@@ -22,8 +23,6 @@ export default function App() {
 
   useEffect(() => {
     dispatch(handleInitialData());
-    //TODO Move to Login
-    // dispatch(setAuthedUser('tylermcginnis'));    
   }, [dispatch]);
 
   const loading = useSelector((state) => state.loadingBar?.default !== 0);
@@ -47,6 +46,11 @@ export default function App() {
                 <Route path="/" element={
                   <AuthRequired>
                     <HomePage />
+                  </AuthRequired>} />
+
+                <Route path='/question/:id' element={
+                  <AuthRequired>
+                    <QuestionPage />
                   </AuthRequired>} />
 
                 <Route path="/add" element={

@@ -4,6 +4,9 @@ import { Tab, Tabs } from "react-bootstrap";
 import QuestionList from "./QuestionList";
 
 export default function Home() {
+  //TODO Check which tab has been active before navigating to a question
+  //     so that the right tab is selected then returning
+
   const authedUser = useSelector((state) => state.authedUser);
   const user = useSelector((state) => state.users[authedUser]);
   const questions = useSelector((state) => Object.values(state.questions));

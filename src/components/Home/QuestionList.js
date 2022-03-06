@@ -11,8 +11,7 @@ export default function QuestionList(props) {
           <QuestionListItem
             id={q.id}
             author={q.author}
-            optionOne={q.optionOne}
-            optionTwo={q.optionTwo} />
+            optionOne={q.optionOne} />
         </li>
       ))}
     </ol>
