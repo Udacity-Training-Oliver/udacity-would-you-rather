@@ -16,6 +16,9 @@ export default function Home() {
   const answeredQuestions = questions.filter((q) => answeredQuestionsIds.includes(q.id));
   const unansweredQuestions = questions.filter((q) => !answeredQuestionsIds.includes(q.id));
 
+  answeredQuestions.sort((a, b) => b.timestamp - a.timestamp);
+  unansweredQuestions.sort((a, b) => b.timestamp - a.timestamp);
+
   return (
     <main>
       <Tabs defaultActiveKey="unanswered" id="questions" className="m-3">
