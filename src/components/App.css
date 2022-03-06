@@ -8,7 +8,7 @@
 /* Button shadow, adapted from here:
  *  https://stackoverflow.com/questions/70325840/bootstrap-5-button-border-color-via-css
  */
-.btn-check:focus + .btn-primary, 
+/* .btn-check:focus + .btn-primary, 
 .btn-primary:focus {
   box-shadow: 0 0 0 .25rem #9b9d9e !important;
 }
@@ -18,7 +18,7 @@
 .btn-primary:active:focus, 
 .show > .btn-primary.dropdown-toggle:focus {
   box-shadow: 0 0 0 .25rem #9b9d9e !important; 
-}
+} */
 
 /*
  * Tab Layout, adapted from here:
@@ -41,4 +41,33 @@
 .nav-tabs .nav-link:hover{
   color: #3c4043 !important;
   background-color: #9b9d9e !important;
+}
+
+
+/*
+ * Horizontal line with text adapted from here:
+ * https://melvingeorge.me/blog/add-text-in-center-on-divider-hr-html-css
+ */
+
+ .divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+/* To show the lines on right and left sides of the text */
+.divider::after,
+.divider::before {
+  content: "";
+  border: 0.1px solid black;
+  flex: 1;
+}
+
+/* Space on left and right sides of text */
+.divider:not(:empty)::before {
+  margin-right: 0.25em;
+}
+
+.divider:not(:empty)::after {
+  margin-left: 0.25em;
 }
