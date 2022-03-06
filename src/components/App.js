@@ -15,8 +15,8 @@ import LeaderBoardPage from './LeaderBoard/LeaderBoardPage';
 import LoginPage from './Login/LoginPage';
 import Menu from './Menu/Menu';
 import AuthRequired from './Login/AuthRequired';
-//TODO Move to Login
-// import { setAuthedUser } from '../actions/authedUser';
+import NotFound from './NotFound/NotFound';
+import LeaderBoard from './LeaderBoard/LeaderBoardPage';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -57,8 +57,10 @@ export default function App() {
 
                 <Route path="/leaderboard" element={
                   <AuthRequired>
-                    <LeaderBoardPage />
+                    <LeaderBoard />
                   </AuthRequired>} />
+
+                <Route path='*' element={<NotFound />} />
 
               </Routes>
             </div>
