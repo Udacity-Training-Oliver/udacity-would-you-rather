@@ -1,13 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types'
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, Container, Row, Col } from "react-bootstrap";
 
 export default function QuestionListItem(props) {
   const navigate = useNavigate();
   const { id, author, optionOne } = props;
 
-  const userName = useSelector((state) => state.users[author]?.name)
+  const user = useSelector((state) => state.users[author])
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -15,16 +15,25 @@ export default function QuestionListItem(props) {
   };
 
   return (
-    <Card style={{ width: '24rem' }}>
-      <Card.Header as="h5">{`${userName} asks:`}</Card.Header>
+    <Card style={{ width: '28rem' }}>
+      <Card.Header as="h5">{`${user.name} asks:`}</Card.Header>
       <Card.Body>
-        <Card.Title>Would you rather</Card.Title>
-        <Card.Text>
-          ...{optionOne.text.substring(0, 15)}...
-        </Card.Text>
-        <Button variant="primary" onClick={handleClick}>View Poll</Button>
+        <Container>
+          <Row>
+            <Col>
+            <Card.Img width={113} variant="Top" src={user.avatarURL} />
+            </Col>
+            <Col>
+            <Card.Title>Would you rather</Card.Title>
+            <Card.Text>
+              ...{optionOne.text.substring(0, 15)}...
+            </Card.Text>
+            <Button variant="primary" onClick={handleClick}>View Poll</Button>
+            </Col>
+          </Row>
+        </Container>
       </Card.Body>
-    </Card>
+    </Card >
   );
 }
 
