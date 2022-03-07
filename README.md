@@ -29,7 +29,7 @@ yarn add react-bootstrap bootstrap@5.1.3
 - [React Router V6 Authentication](https://reactrouter.com/docs/en/v6/examples/auth)
 - [How To Share State Across React Components with Context](https://www.digitalocean.com/community/tutorials/how-to-share-state-across-react-components-with-context)
 - [Are many useStates better than useState(object)?](https://thoughtspile.github.io/2021/10/11/usestate-object-vs-multiple/)
-
+- [Use Local Storage](https://www.freecodecamp.org/news/how-to-use-localstorage-with-react-hooks-to-set-and-get-items/)
 
 # Would You Rather Project (Starter Code)
 
