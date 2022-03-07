@@ -10,8 +10,7 @@ export default function LeaderBoardPage() {
         avatarURL: u.avatarURL,
       },
       answeredQuestions: Object.keys(u.answers).length,
-      createdQuestions: Object.values(state.questions)
-        .filter((q) => q.author === u.id).length,
+      createdQuestions: u.questions.length,
     }))
   );
 
