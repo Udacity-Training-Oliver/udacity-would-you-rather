@@ -1,11 +1,14 @@
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import AlreadyVotedQuestion from "./AlreadyVotedQuestion";
+import ToBeVotedQuestion from "./ToBeVotedQuesion";
 
 export default function QuestionPage() {
   const { id } = useParams();
 
   const question = useSelector((state) => state.questions[id]);
   const user = useSelector((state) => state.users[state.authedUser]);
+  const author = useSelector((state) => state.users[question.author]);
   const answered = Object.keys(user.answers).includes(question.id);
 
   const usersVote = answered
@@ -14,17 +17,17 @@ export default function QuestionPage() {
       : question.optionTwo.text)
     : 'n/a';
 
-    const optionOneVotes = answered
-      ? question.optionOne.votes.length
-      : -1;
+  const optionOneVotes = answered
+    ? question.optionOne.votes.length
+    : -1;
 
-    const optionTwoVotes = answered
-      ? question.optionTwo.votes.length
-      : -1;
+  const optionTwoVotes = answered
+    ? question.optionTwo.votes.length
+    : -1;
 
-    const totalVotes = answered
-      ? optionOneVotes + optionTwoVotes
-      : -1;
+  const totalVotes = answered
+    ? optionOneVotes + optionTwoVotes
+    : -1;
 
   return (
     <div>
@@ -32,6 +35,7 @@ export default function QuestionPage() {
       <h5 className="mt-3">Common Details</h5>
       <ul>
         <li><strong>User</strong>: {user.name}</li>
+        <li><strong>Author</strong>: {author.name}</li>
         <li><strong>Option 1</strong>: {question.optionOne.text}</li>
         <li><strong>Option 2</strong>: {question.optionTwo.text}</li>
         <li><strong>Answered</strong>: {answered.toString()}</li>
@@ -44,6 +48,10 @@ export default function QuestionPage() {
         <li><strong>Votes Option 2</strong>: {optionTwoVotes}</li>
         <li><strong>Total Votes</strong>: {totalVotes}</li>
       </ul>
+
+      {answered === true
+        ? <AlreadyVotedQuestion />
+        : <ToBeVotedQuestion />}
     </div>
   );
 }
