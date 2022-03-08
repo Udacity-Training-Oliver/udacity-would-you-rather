@@ -38,11 +38,11 @@ export default function ToBeVotedQuestion(props) {
               <div onChange={handleChange}>
                 <div className="form-check">
                   <input type="radio" className="form-check-input" id="radioOptionOne" name="optradio" value="optionOne" />
-                  <label className="form-check-label" for="radioOptionOne">{optionOne}</label>
+                  <label className="form-check-label" htmlFor="radioOptionOne">{optionOne}</label>
                 </div>
                 <div className="form-check">
                   <input type="radio" className="form-check-input" id="radioOptionTwo" name="optradio" value="optionTwo" />
-                  <label className="form-check-label" for="radioOptionTwo">{optionTwo}</label>
+                  <label className="form-check-label" htmlFor="radioOptionTwo">{optionTwo}</label>
                 </div>
               </div>
 
