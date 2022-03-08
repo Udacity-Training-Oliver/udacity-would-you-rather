@@ -4,17 +4,17 @@ import ScoreListItem from './ScoreListItem';
 export default function ScoreList({ scores }) {
 
   return (
-    <ol className="m-3">
+    <div className="m-3">
       {scores.map((s) => (
-        <li key={s.id}>
+        <div key={s.id}>
           <ScoreListItem
             id={s.id}
             user={s.user}
             answeredQuestions={s.answeredQuestions}
             createdQuestions={s.createdQuestions} />
-        </li>
+        </div>
       ))}
-    </ol>
+    </div>
   );
 }
 

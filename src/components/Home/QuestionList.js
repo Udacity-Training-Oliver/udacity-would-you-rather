@@ -5,16 +5,16 @@ export default function QuestionList(props) {
   const { questions } = props;
 
   return (
-    <ol className="m-3">
+    <div className="m-3">
       {questions.map((q) => (
-        <li key={q.id}>
+        <div key={q.id}>
           <QuestionListItem
             id={q.id}
             author={q.author}
             optionOne={q.optionOne} />
-        </li>
+        </div>
       ))}
-    </ol>
+    </div>
   );
 }
 

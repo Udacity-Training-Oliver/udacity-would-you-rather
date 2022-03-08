@@ -15,7 +15,7 @@ export default function QuestionListItem(props) {
   };
 
   return (
-    <Card style={{ width: '28rem' }}>
+    <Card className='m-3' style={{ width: '28rem' }}>
       <Card.Header as="h5">{`${user.name} asks:`}</Card.Header>
       <Card.Body>
         <Container>
