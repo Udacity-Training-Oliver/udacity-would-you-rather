@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import AlreadyVotedQuestion from "./AlreadyVotedQuestion";
-import ToBeVotedQuestion from "./ToBeVotedQuesion";
+import ToBeVotedQuestion from "./ToBeVotedQuestion";
 
 export default function QuestionPage() {
   const { id } = useParams();
@@ -51,7 +51,12 @@ export default function QuestionPage() {
 
       {answered === true
         ? <AlreadyVotedQuestion />
-        : <ToBeVotedQuestion />}
+        : <ToBeVotedQuestion
+          author={author}
+          questionId={question.id}
+          optionOne={question.optionOne.text}
+          optionTwo={question.optionTwo.text}
+        />}
     </div>
   );
 }
