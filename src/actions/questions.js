@@ -1,6 +1,7 @@
 import { showLoading, hideLoading } from "react-redux-loading";
 import { saveQuestion, saveQuestionAnswer } from '../utils/api';
-import { addQuestionToUser } from "./users";
+import { addQuestionToUser, addAnswerToUser } from "./users";
+
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
 export const ADD_QUESTION = 'ADD_QUESTION';
@@ -20,10 +21,12 @@ export const addQuestion = (question) => {
   };
 };
 
-export const answerQuestion = (question) => {
+export const answerQuestion = (userId, questionId, answer) => {
   return {
     type: ANSWER_QUESTION,
-    question,
+    userId,
+    questionId,
+    answer,
   };
 };
 
@@ -49,9 +52,8 @@ export const handleAnswerQuestion = (authedUser, questionId, answer) => (dispatc
     answer,
   })
     .then(() => {
-      //TODO Replace DBG with actions
-      console.log('dispatch update question', questionId, answer);
-      console.log('dispatch update user', authedUser);
+      dispatch(answerQuestion(authedUser, questionId, answer));
+      dispatch(addAnswerToUser(authedUser, questionId, answer));
     })
     .then(() => dispatch(hideLoading()));
 }
