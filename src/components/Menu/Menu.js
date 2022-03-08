@@ -32,7 +32,7 @@ export default function Menu() {
 
             {user && user.avatarURL !== null &&
               <div className="d-flex align-items-center">
-                <img width={32} src={user.avatarURL} alt="Avatar" />
+                <img width={32} src={`${process.env.PUBLIC_URL}/${user.avatarURL}`} alt="Avatar" />
               </div>
             }
             

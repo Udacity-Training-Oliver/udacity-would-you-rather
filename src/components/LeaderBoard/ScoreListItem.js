@@ -10,7 +10,7 @@ export default function ScoreListItem(props) {
         <Container>
           <Row>
             <Col lg="2">
-              <Card.Img width={85} variant="Top" src={user.avatarURL} />
+              <Card.Img width={85} variant="Top" src={`${process.env.PUBLIC_URL}/${user.avatarURL}`} />
             </Col>
             <Col lg="6">
               <Container>

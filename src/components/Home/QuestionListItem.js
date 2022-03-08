@@ -21,7 +21,7 @@ export default function QuestionListItem(props) {
         <Container>
           <Row>
             <Col>
-            <Card.Img width={113} variant="Top" src={user.avatarURL} />
+            <Card.Img width={113} variant="Top" src={`${process.env.PUBLIC_URL}/${user.avatarURL}`} />
             </Col>
             <Col>
             <Card.Title>Would you rather</Card.Title>
