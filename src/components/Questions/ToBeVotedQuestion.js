@@ -1,25 +1,22 @@
-//TODO import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types'
 import { Button, Card, Container, Row, Col } from "react-bootstrap";
+import { handleAnswerQuestion } from '../../actions/questions';
+
 
 export default function ToBeVotedQuestion(props) {
-  //TODO const navigate = useNavigate();
-  
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { author, questionId, optionOne, optionTwo } = props;
-
   const authedUser = useSelector((state) => state.authedUser)
-
-  //TODO Remove DBG
-  console.log('Question', questionId);
-  console.log('AuthedUser', authedUser);
-
   const [answer, setAnswer] = useState('');
 
-  const handleClick = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    //TODO navigate(`/question/${id}`);
+    dispatch(handleAnswerQuestion(authedUser, questionId, answer));
+    navigate('/');
   };
 
   const handleChange = (e) => {
@@ -49,7 +46,7 @@ export default function ToBeVotedQuestion(props) {
                 </div>
               </div>
 
-              <Button className="mt-2" variant="primary" onClick={handleClick} disabled={answer === ''}>Submit</Button>
+              <Button className="mt-2" variant="primary" onClick={handleSubmit} disabled={answer === ''}>Submit</Button>
             </Col>
           </Row>
         </Container>
