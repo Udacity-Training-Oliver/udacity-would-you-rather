@@ -25,6 +25,7 @@ export default function Login() {
   useEffect(() => {
     if (authedUser !== null) {
       dispatch(setAuthedUser(null));
+      localStorage.removeItem('authedUser');
     }
   });
 
@@ -40,6 +41,7 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(setAuthedUser(selectedUser));
+    localStorage.setItem('authedUser', selectedUser);
     navigate(from, { replace: true });
   }
 

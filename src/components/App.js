@@ -17,12 +17,17 @@ import LoginPage from './Login/LoginPage';
 import Menu from './Menu/Menu';
 import AuthRequired from './Login/AuthRequired';
 import NotFound from './NotFound/NotFound';
+import { setAuthedUser } from '../actions/authedUser';
 
 export default function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(handleInitialData());
+    const authedUser = localStorage.getItem('authedUser');
+    if (authedUser !== null) {
+      dispatch(setAuthedUser(authedUser));
+    }
   }, [dispatch]);
 
   const loading = useSelector((state) => state.loadingBar?.default !== 0);
