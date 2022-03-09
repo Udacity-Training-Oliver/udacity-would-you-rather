@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
-import { Tab, Tabs } from "react-bootstrap";
-import QuestionList from "./QuestionList";
+import React, {useState} from 'react';
+import {useSelector} from 'react-redux';
+import {Tab, Tabs} from 'react-bootstrap';
+import QuestionList from './QuestionList';
 
 const LS_CURRENT_HOMEPAGE_TAB = 'CurrentHomePageTab';
 
-export default function Home() {
+const Home = () => {
   // Check which tab has been active before navigating to a question
   // so that the right tab is selected when returning
   const lsCurrentTab = localStorage.getItem(LS_CURRENT_HOMEPAGE_TAB);
@@ -20,8 +20,11 @@ export default function Home() {
   }
 
   const answeredQuestionsIds = user.answers ? Object.keys(user.answers) : [];
-  const answeredQuestions = questions.filter((q) => answeredQuestionsIds.includes(q.id));
-  const unansweredQuestions = questions.filter((q) => !answeredQuestionsIds.includes(q.id));
+
+  const answeredQuestions = questions
+      .filter((q) => answeredQuestionsIds.includes(q.id));
+  const unansweredQuestions = questions
+      .filter((q) => !answeredQuestionsIds.includes(q.id));
 
   answeredQuestions.sort((a, b) => b.timestamp - a.timestamp);
   unansweredQuestions.sort((a, b) => b.timestamp - a.timestamp);
@@ -29,11 +32,16 @@ export default function Home() {
   const handleSelect = (selectedTab) => {
     setCurrentTab(selectedTab);
     localStorage.setItem(LS_CURRENT_HOMEPAGE_TAB, selectedTab);
-  }
-  
+  };
+
   return (
     <main>
-      <Tabs activeKey={currentTab} onSelect={handleSelect} id="questions" className="m-3">
+      <Tabs
+        activeKey={currentTab}
+        onSelect={handleSelect}
+        id="questions"
+        className="m-3"
+      >
         <Tab eventKey="unanswered" title="Unanswered Questions">
           <QuestionList questions={unansweredQuestions} />
         </Tab>
@@ -43,4 +51,6 @@ export default function Home() {
       </Tabs>
     </main>
   );
-}
+};
+
+export default Home;

@@ -1,10 +1,11 @@
-import { useParams, Navigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import AlreadyVotedQuestion from "./AlreadyVotedQuestion";
-import ToBeVotedQuestion from "./ToBeVotedQuestion";
+import React from 'react';
+import {useParams, Navigate} from 'react-router-dom';
+import {useSelector} from 'react-redux';
+import AlreadyVotedQuestion from './AlreadyVotedQuestion';
+import ToBeVotedQuestion from './ToBeVotedQuestion';
 
-export default function QuestionPage() {
-  const { id } = useParams();
+const QuestionPage = () => {
+  const {id} = useParams();
 
   const question = useSelector((state) => state.questions[id]);
 
@@ -19,12 +20,12 @@ export default function QuestionPage() {
 
   return (
     <div>
-      {answered === true
-        ? <AlreadyVotedQuestion
+      {answered === true ?
+        <AlreadyVotedQuestion
           author={author}
           question={question}
-        />
-        : <ToBeVotedQuestion
+        /> :
+        <ToBeVotedQuestion
           author={author}
           questionId={question.id}
           optionOne={question.optionOne.text}
@@ -32,4 +33,6 @@ export default function QuestionPage() {
         />}
     </div>
   );
-}
+};
+
+export default QuestionPage;

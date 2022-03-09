@@ -1,8 +1,9 @@
-import { useSelector } from "react-redux"
-import { Container, Nav, Navbar } from "react-bootstrap"
-import { Link } from "react-router-dom"
+import React from 'react';
+import {useSelector} from 'react-redux';
+import {Link} from 'react-router-dom';
+import {Container, Nav, Navbar} from 'react-bootstrap';
 
-export default function Menu() {
+const Menu = () => {
   const user = useSelector((state) => state.users[state.authedUser]);
 
   return (
@@ -25,17 +26,19 @@ export default function Menu() {
               Leader Board
             </Nav.Link>
 
-            {user && 
-            <Navbar.Text className="mx-2 ms-auto">
+            {user && <Navbar.Text className="mx-2 ms-auto">
               Hello {user.name}
             </Navbar.Text>}
 
             {user && user.avatarURL !== null &&
               <div className="d-flex align-items-center">
-                <img width={32} src={`${process.env.PUBLIC_URL}/${user.avatarURL}`} alt="Avatar" />
+                <img
+                  width={32}
+                  src={`${process.env.PUBLIC_URL}/${user.avatarURL}`}
+                  alt="Avatar" />
               </div>
             }
-            
+
             <Nav.Link as={Link} to="/login" className="mx-2 ms-auto">
               {user ? 'Logout' : 'Login'}
             </Nav.Link>
@@ -43,5 +46,7 @@ export default function Menu() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  )
-}
+  );
+};
+
+export default Menu;

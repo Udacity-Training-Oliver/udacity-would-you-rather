@@ -1,7 +1,7 @@
 import {
   RECEIVE_QUESTIONS,
   ADD_QUESTION,
-  ANSWER_QUESTION
+  ANSWER_QUESTION,
 } from '../actions/questions';
 
 const questions = (state = {}, action) => {
@@ -10,7 +10,7 @@ const questions = (state = {}, action) => {
       return {
         ...state,
         ...action.questions,
-      }
+      };
     case ADD_QUESTION:
       return {
         ...state,
@@ -23,13 +23,14 @@ const questions = (state = {}, action) => {
           ...state[action.questionId],
           [action.answer]: {
             ...state[action.questionId][action.answer],
-            votes: state[action.questionId][action.answer].votes.concat([action.userId])
-          }
-        }
+            votes: state[action.questionId][action.answer]
+                .votes.concat([action.userId]),
+          },
+        },
       };
     default:
       return state;
   }
-}
+};
 
 export default questions;

@@ -1,9 +1,10 @@
-import { useSelector } from "react-redux";
-import ScoreList from "./ScoreList"
+import React from 'react';
+import {useSelector} from 'react-redux';
+import ScoreList from './ScoreList';
 
-export default function LeaderBoardPage() {
+const LeaderBoardPage = () => {
   const scores = useSelector((state) =>
-    Object.values(state.users).map(u => ({
+    Object.values(state.users).map((u) => ({
       id: u.id,
       user: {
         name: u.name,
@@ -11,14 +12,18 @@ export default function LeaderBoardPage() {
       },
       answeredQuestions: Object.keys(u.answers).length,
       createdQuestions: u.questions.length,
-    }))
+    })),
   );
 
-  scores.sort((a, b) => (b.answeredQuestions + b.createdQuestions) - (a.answeredQuestions + a.createdQuestions));
+  scores.sort((a, b) =>
+    (b.answeredQuestions + b.createdQuestions) -
+    (a.answeredQuestions + a.createdQuestions));
 
   return (
     <main>
-        <ScoreList scores={scores} />
+      <ScoreList scores={scores} />
     </main>
   );
-}
+};
+
+export default LeaderBoardPage;

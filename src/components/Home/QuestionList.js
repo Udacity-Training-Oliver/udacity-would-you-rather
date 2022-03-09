@@ -1,8 +1,9 @@
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 import QuestionListItem from './QuestionListItem';
 
-export default function QuestionList(props) {
-  const { questions } = props;
+const QuestionList = (props) => {
+  const {questions} = props;
 
   return (
     <div className="m-3">
@@ -16,8 +17,10 @@ export default function QuestionList(props) {
       ))}
     </div>
   );
-}
+};
 
 QuestionList.propTypes = {
   questions: PropTypes.array.isRequired,
-}
+};
+
+export default QuestionList;

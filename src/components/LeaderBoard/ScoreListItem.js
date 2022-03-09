@@ -1,16 +1,18 @@
-import PropTypes from 'prop-types'
-import { Container, Col, Row, Card } from "react-bootstrap";
+import React from 'react';
+import PropTypes from 'prop-types';
+import {Container, Col, Row, Card} from 'react-bootstrap';
 
-export default function ScoreListItem(props) {
-  const { user, answeredQuestions, createdQuestions } = props;
+const ScoreListItem = (props) => {
+  const {user, answeredQuestions, createdQuestions} = props;
 
   return (
-    <Card className='m-3' style={{ width: '34rem' }}>
+    <Card className='m-3' style={{width: '34rem'}}>
       <Card.Body>
         <Container>
           <Row>
             <Col lg="2">
-              <Card.Img width={85} variant="Top" src={`${process.env.PUBLIC_URL}/${user.avatarURL}`} />
+              <Card.Img width={85} variant="Top" alt="Avatar"
+                src={`${process.env.PUBLIC_URL}/${user.avatarURL}`} />
             </Col>
             <Col lg="6">
               <Container>
@@ -22,7 +24,7 @@ export default function ScoreListItem(props) {
                     Answered questions: {answeredQuestions}
                   </Card.Text>
                 </Row>
-                <Row  className="mt-1">
+                <Row className="mt-1">
                   <Card.Text className='mb-2'>
                     Created questions: {createdQuestions}
                   </Card.Text>
@@ -30,7 +32,7 @@ export default function ScoreListItem(props) {
               </Container>
             </Col>
             <Col lg="1">
-              <Card style={{ width: '5.5rem', height: "5.5rem" }}>
+              <Card style={{width: '5.5rem', height: '5.5rem'}}>
                 <Card.Header as="h6">Score</Card.Header>
                 <Card.Body>
                   <Card.Text>
@@ -44,11 +46,13 @@ export default function ScoreListItem(props) {
       </Card.Body>
     </Card>
   );
-}
+};
 
 ScoreListItem.propTypes = {
   id: PropTypes.string.isRequired,
   user: PropTypes.object.isRequired,
   answeredQuestions: PropTypes.number.isRequired,
   createdQuestions: PropTypes.number.isRequired,
-}
+};
+
+export default ScoreListItem;

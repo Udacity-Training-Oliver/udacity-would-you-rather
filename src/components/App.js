@@ -1,14 +1,13 @@
-import React, { useEffect, Fragment } from 'react';
+import React, {useEffect, Fragment} from 'react';
 import {
   BrowserRouter as Router,
   Route,
   Routes,
 } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import LoadingBar from 'react-redux-loading';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { handleInitialData } from '../actions/shared';
 import HomePage from './Home/HomePage';
 import QuestionPage from './Questions/QuestionPage';
 import AddQuestionPage from './Questions/AddQuestionPage';
@@ -17,9 +16,10 @@ import LoginPage from './Login/LoginPage';
 import Menu from './Menu/Menu';
 import AuthRequired from './Login/AuthRequired';
 import NotFound from './NotFound/NotFound';
-import { setAuthedUser } from '../actions/authedUser';
+import {handleInitialData} from '../actions/shared';
+import {setAuthedUser} from '../actions/authedUser';
 
-export default function App() {
+const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -37,9 +37,7 @@ export default function App() {
       <Fragment>
         <div>
           <LoadingBar />
-          {loading === true
-            ? null
-            :
+          {loading === true ? null :
             <div>
               <header>
                 <Menu />
@@ -77,4 +75,6 @@ export default function App() {
       </Fragment>
     </Router>
   );
-}
+};
+
+export default App;

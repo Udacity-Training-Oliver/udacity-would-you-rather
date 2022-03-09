@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 import ScoreListItem from './ScoreListItem';
 
-export default function ScoreList({ scores }) {
-
+const ScoreList = ({scores}) => {
   return (
     <div className="m-3">
       {scores.map((s) => (
@@ -16,8 +16,11 @@ export default function ScoreList({ scores }) {
       ))}
     </div>
   );
-}
+};
 
 ScoreList.propTypes = {
   scores: PropTypes.array.isRequired,
-}
+};
+
+export default ScoreList;
+

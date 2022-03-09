@@ -1,8 +1,8 @@
 import {
   RECEIVE_USERS,
   ADD_QUESTION_TO_USER,
-  ADD_ANSWER_TO_USER
-} from "../actions/users";
+  ADD_ANSWER_TO_USER,
+} from '../actions/users';
 
 const users = (state = {}, action) => {
   switch (action.type) {
@@ -10,14 +10,15 @@ const users = (state = {}, action) => {
       return {
         ...state,
         ...action.users,
-      }
+      };
     case ADD_QUESTION_TO_USER:
       return {
         ...state,
         [action.userId]: {
           ...state[action.userId],
-          questions: state[action.userId].questions.concat([action.questionId])
-        }
+          questions: state[action.userId]
+              .questions.concat([action.questionId]),
+        },
       };
     case ADD_ANSWER_TO_USER:
       return {
@@ -26,13 +27,13 @@ const users = (state = {}, action) => {
           ...state[action.userId],
           answers: {
             ...state[action.userId].answers,
-            [action.questionId]: action.answer
-          }
-        }
+            [action.questionId]: action.answer,
+          },
+        },
       };
     default:
       return state;
   }
-}
+};
 
 export default users;

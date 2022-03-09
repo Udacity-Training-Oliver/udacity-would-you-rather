@@ -1,6 +1,6 @@
-import { showLoading, hideLoading } from "react-redux-loading";
-import { saveQuestion, saveQuestionAnswer } from '../utils/api';
-import { addQuestionToUser, addAnswerToUser } from "./users";
+import {showLoading, hideLoading} from 'react-redux-loading';
+import {saveQuestion, saveQuestionAnswer} from '../utils/api';
+import {addQuestionToUser, addAnswerToUser} from './users';
 
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
@@ -30,30 +30,33 @@ export const answerQuestion = (userId, questionId, answer) => {
   };
 };
 
-export const handleAddQuestion = (authedUser, optionOneText, optionTwoText) => (dispatch) => {
+export const handleAddQuestion = (
+    authedUser,
+    optionOneText,
+    optionTwoText) => (dispatch) => {
   dispatch(showLoading());
   return saveQuestion({
     author: authedUser,
     optionOneText,
     optionTwoText,
-  })
-    .then((question) => {
-      dispatch(addQuestion(question));
-      dispatch(addQuestionToUser(question.id, authedUser));
-    })
-    .then(() => dispatch(hideLoading()));
-}
+  }).then((question) => {
+    dispatch(addQuestion(question));
+    dispatch(addQuestionToUser(question.id, authedUser));
+  }).then(() =>
+    dispatch(hideLoading()));
+};
 
-export const handleAnswerQuestion = (authedUser, questionId, answer) => (dispatch) => {
+export const handleAnswerQuestion = (
+    authedUser,
+    questionId,
+    answer) => (dispatch) => {
   dispatch(showLoading());
   return saveQuestionAnswer({
     authedUser,
     questionId,
     answer,
-  })
-    .then(() => {
-      dispatch(answerQuestion(authedUser, questionId, answer));
-      dispatch(addAnswerToUser(authedUser, questionId, answer));
-    })
-    .then(() => dispatch(hideLoading()));
-}
+  }).then(() => {
+    dispatch(answerQuestion(authedUser, questionId, answer));
+    dispatch(addAnswerToUser(authedUser, questionId, answer));
+  }).then(() => dispatch(hideLoading()));
+};

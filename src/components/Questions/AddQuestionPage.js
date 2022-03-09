@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { Button, Form } from 'react-bootstrap';
-import { handleAddQuestion } from '../../actions/questions';
+import React, {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
+import {Button, Form} from 'react-bootstrap';
+import {handleAddQuestion} from '../../actions/questions';
 
-export default function AddQuestion() {
+const AddQuestion = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -26,15 +26,15 @@ export default function AddQuestion() {
       default:
         alert(`Invalid form field ${e.target.name}`);
     }
-  }
+  };
 
-  // Login functionality: After a user has been selected submit updated the 
+  // Login functionality: After a user has been selected submit updated the
   // authed user in the Redux-Store and navigates to the prior location
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(handleAddQuestion(authedUser, optionOneText, optionTwoText));
     return navigate('/');
-  }
+  };
 
   return (
     <main>
@@ -53,7 +53,7 @@ export default function AddQuestion() {
         />
 
         <div className="divider m-3 w-50"><strong>OR</strong></div>
-        
+
         <Form.Control
           className="m-3 w-50"
           type="text"
@@ -69,4 +69,6 @@ export default function AddQuestion() {
 
     </main>
   );
-}
+};
+
+export default AddQuestion;
