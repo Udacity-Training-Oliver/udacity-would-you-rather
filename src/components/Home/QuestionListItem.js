@@ -12,7 +12,7 @@ const QuestionListItem = (props) => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    navigate(`/question/${id}`);
+    navigate(`/questions/${id}`);
   };
 
   return (

@@ -51,7 +51,7 @@ const App = () => {
                     <HomePage />
                   </AuthRequired>} />
 
-                <Route path='/question/:id' element={
+                <Route path='/questions/:id' element={
                   <AuthRequired>
                     <QuestionPage />
                   </AuthRequired>} />
