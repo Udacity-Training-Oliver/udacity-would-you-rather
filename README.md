@@ -76,7 +76,7 @@ Code
 ### Project Structure
 The general structure is like the usual one of a Reat-project. Below the ```src``` folder is the individual part, the most important folders and files (are as follows):
 
-```bash
+```
 src
 ├── index.js                        # Root page, contains App & Store
 ├── components
