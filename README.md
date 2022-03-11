@@ -33,7 +33,9 @@ According to the project instructions most of the state has to be implemented wi
 
 Exceptions where made in several components for the following use cases
 - **Local Store**: Buffer a specific value from the UI for later processing by a event handler
-- **Props**: Components which visualize a specific item get the (sometimes calulated values) passed as ```props``` from the list-component.
+- **Props**:
+  - Components which visualize a specific item get the (also calulated) attributes passed as ```props``` from the higher component, e.g. list components.
+  - A list with (also calculated) specific attributes will be passed as ```props``` (```QuestionList```, ```ScoreList```)
 - **LocalStorage**: Only for specific use case that need to survive a page switch or a full reload
   - Currently selected tab on the home page
   - Currently logged in user (in a productive version this would have been implemented with at least a timestamp to log of an user after a certain time of inactivity)
