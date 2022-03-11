@@ -38,6 +38,10 @@ Exceptions where made in several components for the following use cases
   - Currently selected tab on the home page
   - Currently logged in user (in a productive version this would have been implemented with at least a timestamp to log of an user after a certain time of inactivity)
 
+**Component Overview**
+
+![Component Overview](./doc/img/Components.jpeg)
+
 ## Project Setup
 
 The project has been created from scratch with ```yarn``` as the package manager from the start:
