@@ -16,7 +16,7 @@ const ToBeVotedQuestion = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(handleAnswerQuestion(authedUser, questionId, answer));
-    navigate('/');
+    navigate(`/questions/${questionId}`);
   };
 
   const handleChange = (e) => {
